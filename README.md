@@ -1,6 +1,9 @@
 # wordtohtml
 这是可以将word文档的内容转换成自适应的html文档，仓库中的脚本是简单的例子，如需比较复杂的样式，可自行配置
 
+在线体验链接：http://www.janus-c.top/project/wordToHtml/
+
+
 ```
 pnpm i
 node utils/wordToHtml path
