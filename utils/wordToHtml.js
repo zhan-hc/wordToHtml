@@ -12,12 +12,9 @@ if (args.length === 0) {
 
 const filePath = args[0];
 
-
+const classArrs = ['text-center', 'text-right', 'underline']
 const options = {
-  styleMap: [
-    "p[style-name='text-center'] => p.text-center:fresh",
-    "p[style-name='text-right'] => p.text-right:fresh"
-  ],
+  styleMap: generateCombinations(classArrs).map(item => `p[style-name='${item}'] => p.${item.split(' ').join('.')}:fresh`),
   transformDocument: mammoth.transforms.paragraph(transformParagraph)
 };
 
@@ -29,7 +26,10 @@ function transformParagraph(paragraph) {
   } else if (paragraph.alignment === "right") {
     styleName = "text-right";
   }
-  
+  if (paragraph.children.some(item => item.isUnderline)) {
+    styleName += `${styleName ? ' ' : ''}underline`
+  }
+  console.log(paragraph, 'ppp')
   return {
       ...paragraph,
       styleName
@@ -46,3 +46,20 @@ mammoth.convertToHtml({ path: filePath }, options).then(function(result){
 }).catch(function(err){
   console.log(err);
 });
+
+function generateCombinations(numbers) {
+  // 创建一个新数组来存放结果
+  let result = numbers.slice(); // 使用 slice 方法来复制原始数组的内容
+
+  // 循环遍历数组中的每个数字
+  for (let i = 0; i < numbers.length; i++) {
+      for (let j = i + 1; j < numbers.length; j++) {
+          // 将两个数字以空格分隔拼接成一个新的字符串
+          let combined = numbers[i] + ' ' + numbers[j];
+          // 添加到结果数组中
+          result.push(combined);
+      }
+  }
+
+  return result;
+}

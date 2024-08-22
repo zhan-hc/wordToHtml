@@ -24,6 +24,7 @@ export const tempHtml = (html: string): string => `
       ins,a {text-decoration:none;}
       .text-center{text-align: center;}
       .text-right{text-align: right;}
+      .underline{text-decoration: underline;}
     </style>
   </head>
   <body>

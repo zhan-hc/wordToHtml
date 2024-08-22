@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@janus-c/icons-vue':
+    specifier: ^1.0.2
+    version: 1.0.2
+  janus-ui:
+    specifier: ^0.0.3
+    version: 0.0.3
   mammoth:
     specifier: ^1.8.0
     version: 1.8.0
@@ -260,6 +266,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@janus-c/icons-vue@1.0.2:
+    resolution: {integrity: sha512-wVeVn2GfAYcodFxz0oHf7zz7qZNHLKjVArccU2RWD/C8bv4EDvMlXUXocdxdaBXvoMvX5e7Mr6g4DiidAJ7ohg==}
+    dev: false
 
   /@jridgewell/sourcemap-codec@1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
@@ -651,6 +661,10 @@ packages:
 
   /isarray@1.0.0:
     resolution: {integrity: sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==}
+    dev: false
+
+  /janus-ui@0.0.3:
+    resolution: {integrity: sha512-95MxO+uR9fK8KAFGkEo/F5T6Tke9yittWF6WCiM/4bAoc1BwplVyPJWlkWgPuWtgEmoiMVnFrbaBGGZOf4EMLA==}
     dev: false
 
   /jszip@3.10.1:
