@@ -29,7 +29,6 @@ function transformParagraph(paragraph) {
   if (paragraph.children.some(item => item.isUnderline)) {
     styleName += `${styleName ? ' ' : ''}underline`
   }
-  console.log(paragraph, 'ppp')
   return {
       ...paragraph,
       styleName

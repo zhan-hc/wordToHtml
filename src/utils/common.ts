@@ -25,6 +25,8 @@ export const tempHtml = (html: string): string => `
       .text-center{text-align: center;}
       .text-right{text-align: right;}
       .underline{text-decoration: underline;}
+      table, th, td {border: 1px solid black;border-collapse: collapse; /* 移除单元格之间的间隔 */}
+      td {padding: 0 10px;}
     </style>
   </head>
   <body>
